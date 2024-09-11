@@ -1,0 +1,13 @@
+services:
+  node-server:
+    build:
+      dockerfile: ./DockerContainer_NodeJS.dockerfile
+    networks:
+      - my_network
+    ports:
+      - 3000:3000
+    volumes:
+      - ./Frontend:./
+
+networks:
+  my_network:
