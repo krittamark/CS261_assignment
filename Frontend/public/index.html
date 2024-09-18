@@ -3,9 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบ</title>
+    <title>Login Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .login-card {
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 48px;
+            width: 100%;
+            max-width: 400px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+        .logo svg {
+            width: 120px;
+            height: auto;
+        }
+        h2 {
+            color: #c10230;
+            font-weight: 500;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 24px;
+            position: relative;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 0;
+            font-size: 16px;
+            color: #333;
+            border: none;
+            border-bottom: 1px solid #ddd;
+            outline: none;
+            background: transparent;
+            transition: border-color 0.2s;
+        }
+        .form-group label {
+            position: absolute;
+            top: 12px;
+            left: 0;
+            font-size: 16px;
+            color: #999;
+            pointer-events: none;
+            transition: 0.2s ease all;
+        }
+        .form-group input:focus ~ label,
+        .form-group input:valid ~ label {
+            top: -20px;
+            font-size: 14px;
+            color: #c10230;
+        }
+        .form-group .bar {
+            position: relative;
+            display: block;
+            width: 100%;
+        }
+        .form-group .bar:before {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 0;
+            position: absolute;
+            background: #c10230;
+            transition: 0.2s ease all;
+        }
+        .form-group input:focus ~ .bar:before {
+            width: 100%;
+        }
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #c10230;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 500;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .submit-btn:hover {
+            background-color: #a0021f;
+        }
+        .forgot-password {
+            text-align: right;
+            margin-top: 12px;
+        }
+        .forgot-password a {
+            color: #ffd040;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+        .forgot-password a:hover {
+            color: #e6bb3a;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="login-card">
+        <div class="logo">
+            <img src="/img/TU_Colored_Horz.svg" alt="Thammasat University Logo" srcset="">
+        </div>
+        <h2>Login</h2>
+        <form>
+            <div class="form-group">
+                <input type="email" required>
+                <span class="bar"></span>
+                <label>Email</label>
+            </div>
+            <div class="form-group">
+                <input type="password" required>
+                <span class="bar"></span>
+                <label>Password</label>
+            </div>
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
 </body>
 </html>
