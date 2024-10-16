@@ -38,5 +38,15 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="/script/login.js"></script>
+    <script>
+      const loginForm = document.getElementById('loginForm');
+      loginForm.addEventListener('submit', (e) => {
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const resultDiv = document.getElementById('result');
+        e.preventDefault();
+        checkLogin(username, password, resultDiv);
+      });
+    </script>
   </body>
 </html>

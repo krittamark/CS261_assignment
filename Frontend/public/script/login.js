@@ -1,10 +1,7 @@
 const API_ENDPOINT = "https://restapi.tu.ac.th/api/v1/auth/Ad/verify";
 const APPLICATION_KEY = "{{API_KEY}}"; // Replace with your actual key
 
-function onLoginClicked() {
-  const username = document.getElementById("username").value;
-  const password = document.getElementById("password").value;
-  const resultDiv = document.getElementById("result");
+function checkLogin(username, password, resultDiv) {
 
   axios
     .post(
