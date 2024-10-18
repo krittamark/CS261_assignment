@@ -1,13 +1,11 @@
 services:
   node-server:
-    build:
-      dockerfile: ./DockerContainer_NodeJS.dockerfile
-    networks:
-      - my_network
-    ports:
-      - 3000:3000
+    image: node:18
+    ports: 
+      - "3000:3000"
     volumes:
-      - ./Frontend:./
-
-networks:
-  my_network:
+      - './Frontend:/usr/src/app'
+    working_dir: '/usr/src/app'
+    command: bash -c "npm install && npm start"
+    environment:
+      - NODE_ENV=production
